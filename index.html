@@ -144,7 +144,7 @@
             else if (letter != ''){
                 $updateMessage(letter + " is incorrect.<br/>Please Try Again!", true);
             }
-            $(element).removeAttr('value');
+            $(element).val('');
     }
 
     function $refocus(){
