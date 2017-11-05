@@ -137,7 +137,7 @@
     }
 
     function $checkResponseForCorrectAnswer(element){
-            var letter = $(element).val();
+            var letter = $(element).val().substr(0,1);
             if (letter === letterToType && $('#caseSens')[0].checked || letter.toString().toLowerCase() === letterToType.toString().toLowerCase() && !$('#caseSens')[0].checked){
                 $updateMessage("Great Work!");
             }
