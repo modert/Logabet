@@ -10,7 +10,7 @@ var alphaNumString;
 
     	var msg = new SpeechSynthesisUtterance();
 
-    	msg.text = textToSpeak;
+    	msg.text = textToSpeak.toString().replace("</br>", "");
     	//msg.voice = "Google US English";
     	msg.pitch = 1;
     	msg.rate = 1.25;
