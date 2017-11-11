@@ -10,7 +10,7 @@ var alphaNumString;
 
     	var msg = new SpeechSynthesisUtterance();
 
-    	msg.text = textToSpeak.toString().replace("<br/>", "");
+    	msg.text = textToSpeak.toString().replace("<br/>", " ");
     	//msg.voice = "Google US English";
     	msg.pitch = 1;
     	msg.rate = 1.25;
@@ -98,7 +98,7 @@ var alphaNumString;
                 $updateMessage("Great Work!");
             }
             else if (letter != ''){
-                $updateMessage("You found the " + letterOrNumber(letter) + " " + letter + ".<br/>Please find the " +
+                $updateMessage("You found the " + letterOrNumber(letter) + " " + letter + ",<br/>please find the " +
                 	letterOrNumber(letterToType) + " " + letterToType + "!", true);
             }
             $(element).val("").blur().focus();
