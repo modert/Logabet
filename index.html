@@ -9,7 +9,7 @@
 
     <link href="logabet.css" rel="stylesheet">
 </head>
-<body class="container">
+<body class="container-fluid">
     <div class="panel panel-success">
         <div class="panel-heading text-center">
             <img class="img-responsive" src="LOG-A-BET.svg"/>
@@ -28,47 +28,50 @@
         <div class="panel-body text-center">
             <input id="inputLetter" name="inputLetter" class="h1 col-letter text-center" autofocus="true" autocapitalize=off />
         </div>
+    </div>    
+    <div class="col-sm-12 col-md-6 col-lg-6">
+    	<div class="panel panel-default row">
+        	<div class="panel-heading">
+	        Options
+	        </div>
+	        <div class="panel-body row form-inline">
+	            <div class="checkbox checkbox-inline">
+	                <label>
+	                    <input id="lowLet" name="lowLet" type="checkbox" class="checkbox">
+	                    lowercase letters
+	                </label>    
+	            </div>
+	            <div class="checkbox checkbox-inline">
+	                <label>
+	                    <input id="capLet" name="capLet" type="checkbox" class="checkbox" checked="checked">
+	                    CAPITAL LETTERS
+	                </label>    
+	            </div>
+	            <div class="checkbox checkbox-inline">
+					<label>
+	            	<input id="nums" name="nums" type="checkbox" class="checkbox">
+	                    Numbers
+	                </label>    
+	            </div>
+	        </div>
+		</div>
+	</div>
+    <div class="col-sm-12 col-md-6 col-lg-6">
+    	<div class="panel panel-default row">
+	        <div class="panel-heading">
+	        Scoring
+        	</div>
+	        <div class="panel-body row form-inline">
+	            <div class="checkbox checkbox-inline">
+	                <label>
+	                    <input id="caseSens" name="caseSens" type="checkbox" class="checkbox">
+	                    CaSe SenSiTiVe
+	                </label>    
+	            </div>
+	        </div>
+    	</div>
     </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-        Options
-        </div>
-        <div class="panel panel-body">
-            <div class="checkbox checkbox-inline">
-                <label>
-                    <input id="lowLet" name="lowLet" type="checkbox" class="checkbox">Lowercase Letters
-                </label>    
-            </div>
-            <div class="checkbox checkbox-inline">
-                <label>
-                    <input id="capLet" name="capLet" type="checkbox" class="checkbox" checked="checked">Capital Letters
-                </label>    
-            </div>
-            <div class="checkbox checkbox-inline">
-                <label>
-                    <input id="nums" name="nums" type="checkbox" class="checkbox">Numbers
-                </label>    
-            </div>
-        </div>
-    </div>
-        <div class="panel panel-default">
-        <div class="panel-heading">
-        Scoring
-        </div>
-        <div class="panel panel-body">
-            <div class="checkbox checkbox-inline">
-                <label>
-                    <input id="caseSens" name="caseSens" type="checkbox" class="checkbox">
-                    CaSe SenSiTiVe
-                </label>    
-            </div>
-<!--             <div class="checkbox checkbox-inline">
-                <label>
-                    <input id="capLet" name="capLet" type="checkbox" class="checkbox">Capital Letters
-                </label>    
-            </div> -->
-        </div>
-    </div>
+
 </body>
 </html>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
