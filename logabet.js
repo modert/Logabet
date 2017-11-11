@@ -12,7 +12,7 @@ var alphaNumString;
 
     	msg.text = textToSpeak;
     	//msg.voice = "Google US English";
-    	msg.pitch = 6;
+    	msg.pitch = 4;
     	msg.rate = 1.25;
     	msg.volume = 9;
 
@@ -74,7 +74,7 @@ var alphaNumString;
     }
 
     function letterOrNumber(letter){
-        if((letter * 1) != letter){
+        if((letter * 1) !== letter){
     		return "letter";
     	};
 		return "number";
