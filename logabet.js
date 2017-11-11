@@ -12,7 +12,7 @@ var alphaNumString;
 
     	msg.text = textToSpeak;
     	//msg.voice = "Google US English";
-    	msg.pitch = 4;
+    	msg.pitch = 1;
     	msg.rate = 1.25;
     	msg.volume = 9;
 
