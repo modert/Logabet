@@ -35,6 +35,8 @@ var alphaNumString;
         $listenForCheckbox();
         $updateAlphaNumString();
         $genRandomCharacter();
+        $('#inputLetter').focus();
+        $('#inputLetter').click();
     });
 
     function $genRandomCharacter(){
