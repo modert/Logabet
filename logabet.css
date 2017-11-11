@@ -1,0 +1,17 @@
+        body{
+            padding-top: 10px;
+            font-family: sans-serif;
+        }
+        .col-centered{
+            float: none;
+            margin: auto;
+        }
+        .col-letter{
+            width: 15%;
+        }
+        .letter{
+            font-size:400%;
+        }
+                .img-responsive{
+max-height: 100px;
+        }
