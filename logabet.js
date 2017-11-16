@@ -5,6 +5,7 @@ var alphaNumString;
     var voiceTimeout = null;
     var letterTimeout = null;
     var blurTimeout = null;
+    var caseSensitive = false;
 
     function speak(textToSpeak){
 
@@ -40,7 +41,7 @@ var alphaNumString;
 
     function $genRandomCharacter(){
     	var rando = random_character();
-		speak(rando);
+		speak("find " + letterOrNumber(rando)+ " "+rando);
         $('#letter').text(rando);
     }
 
@@ -52,6 +53,7 @@ var alphaNumString;
     }
 
     function $updateAlphaNumString() {
+        var anyChecked = false;
         var checkboxes = $('input.checkbox');
         alphaNumString = "";
         for(i=0;i < checkboxes.length; i++){
@@ -60,26 +62,49 @@ var alphaNumString;
                 switch(checkboxes[i].id){
                     case 'nums':
                         alphaNumString = alphaNumString + "0123456789";
+                        anyChecked = true;
                     break;
                     case 'lowLet':
                         alphaNumString = alphaNumString + "abcdefghijklmnopqrstuvwxyz";
+                        anyChecked = true;
                     break;
                     case 'capLet':
                         alphaNumString = alphaNumString +  "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                        anyChecked = true;
                     break;
+                    case 'caseSens':
+                        caseSensitive = true;
                     default:
                 }
             }
+            else{
+                switch(checkboxes[i].id){
+
+                    case 'caseSens':
+                        caseSensitive = false;
+                    default:
+                }
+            
+            }
+        }
+        if(!anyChecked){
+            resetDefault();
         }
         $refocus();
     }
 
     function letterOrNumber(letter){
-        if((letter * 1) !== letter){
-    		return "letter";
+        if((letter * 1) != letter){
+            if(caseSensitive){
+                if(letter.toString().toUpperCase() === letter){
+                    return "an uppercase";
+                };
+            return "a lowercase";   
+            };
+            return "the letter";
     	};
-		return "number";
-    }
+		return "the number";
+    };
 
     function $listenForChangeToText(){
         $('#inputLetter').off().on('keyup touchend',function(){
@@ -95,11 +120,11 @@ var alphaNumString;
 
     function $checkResponseForCorrectAnswer(element){
             var letter = $(element).val().substr(0,1);
-            if (letter === letterToType && $('#caseSens')[0].checked || letter.toString().toLowerCase() === letterToType.toString().toLowerCase() && !$('#caseSens')[0].checked){
+            if (letter === letterToType && caseSensitive || letter.toString().toLowerCase() === letterToType.toString().toLowerCase() && !caseSensitive){
                 $updateMessage("Great Work!");
             }
             else if (letter != ''){
-                $updateMessage("You found the " + letterOrNumber(letter) + " " + letter + ",<br/>please find the " +
+                $updateMessage("You found " + letterOrNumber(letter) + " " + letter + ",<br/>please find " +
                 	letterOrNumber(letterToType) + " " + letterToType + "!", true);
             }
             $(element).val("").blur().focus();
@@ -127,4 +152,8 @@ var alphaNumString;
     // chars = alphaNumString;
     letterToType = alphaNumString.substr( Math.floor(Math.random() * alphaNumString.length), 1);
     return letterToType;
+}
+function resetDefault(){
+    $('#capLet')[0].checked = true;
+    $updateAlphaNumString()
 }
