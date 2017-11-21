@@ -1,7 +1,12 @@
 var alphaNumString;
     var letterToType;
     var timer = null;
+if ('speechSynthesis' in window) {
     var synth = window.speechSynthesis;
+} else {
+    var synth = null;
+}
+    //var synth = window.speechSynthesis;
     var voiceTimeout = null;
     var letterTimeout = null;
     var blurTimeout = null;
@@ -9,6 +14,7 @@ var alphaNumString;
 
     function speak(textToSpeak){
 
+        if(synth!== null){
     	var msg = new SpeechSynthesisUtterance();
 
     	msg.text = textToSpeak.toString().replace("<br/>", " ");
@@ -28,7 +34,7 @@ var alphaNumString;
 	    }
 	    else{
 			synth.speak(msg);
-	    } 		
+	    } 		}
     }
 
     $(document).ready(function () {
