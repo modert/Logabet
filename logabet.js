@@ -14,10 +14,11 @@ if ('speechSynthesis' in window) {
 
     function speak(textToSpeak){
 
+        var msgClean = textToSpeak.toString().replace("<br/>", " ");
         if(synth !== null){
         	var msg = new SpeechSynthesisUtterance();
 
-        	msg.text = textToSpeak.toString().replace("<br/>", " ");
+        	msg.text = msgClean;
         	//msg.voice = "Google US English";
         	msg.pitch = 1;
         	msg.rate = 1.25;
@@ -38,7 +39,7 @@ if ('speechSynthesis' in window) {
         }
         else{
             try{
-                CSharp.speak(textToSpeak);
+                CSharp.speak(msgClean);
             }catch(e){}
         }
     }
