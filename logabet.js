@@ -14,27 +14,33 @@ if ('speechSynthesis' in window) {
 
     function speak(textToSpeak){
 
-        if(synth!== null){
-    	var msg = new SpeechSynthesisUtterance();
+        if(synth !== null){
+        	var msg = new SpeechSynthesisUtterance();
 
-    	msg.text = textToSpeak.toString().replace("<br/>", " ");
-    	//msg.voice = "Google US English";
-    	msg.pitch = 1;
-    	msg.rate = 1.25;
-    	msg.volume = 9;
+        	msg.text = textToSpeak.toString().replace("<br/>", " ");
+        	//msg.voice = "Google US English";
+        	msg.pitch = 1;
+        	msg.rate = 1.25;
+        	msg.volume = 9;
 
-	    if (speechSynthesis.speaking){
-	    	synth.cancel();
-	    	clearTimeout(voiceTimeout);
-	    	voiceTimeout = setTimeout(
-	    		function(){
-	    			synth.speak(msg);
-	    		},500
-	    	);
-	    }
-	    else{
-			synth.speak(msg);
-	    } 		}
+    	    if (speechSynthesis.speaking){
+    	    	synth.cancel();
+    	    	clearTimeout(voiceTimeout);
+    	    	voiceTimeout = setTimeout(
+    	    		function(){
+    	    			synth.speak(msg);
+    	    		},500
+    	    	);
+    	    }
+    	    else{
+    			synth.speak(msg);
+    	    } 		
+        }
+        else{
+            try{
+                CSharp.speak(textToSpeak);
+            }catch(e){}
+        }
     }
 
     $(document).ready(function () {
