@@ -1,5 +1,6 @@
         body{
             font-family: sans-serif;
+            padding-top: 15px;
         }
         .col-centered{
             float: none;
@@ -26,6 +27,6 @@ max-height: 100px;
             /*margin:0;*/
         }
         .column{
-            padding:2.5px;
+            padding:0 2.5px 0 2.5px;
 /*            margin:0;
 */        }
