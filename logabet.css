@@ -23,10 +23,13 @@ max-height: 100px;
             margin-right:-5px;
 */            border-width: thin;
         }
-        .panel-heading{
-            /*margin:0;*/
-        }
         .column{
             padding:0 2.5px 0 2.5px;
 /*            margin:0;
 */        }
+.score{
+    display:none;
+}
+.timer{
+    display:none;
+}

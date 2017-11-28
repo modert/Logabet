@@ -14,7 +14,30 @@
 
     <div class="panel panel-success">
         <div class="panel-heading text-center">
-            <img class="img-responsive" src="Logabet.svg"/>
+        	<div class="row">
+	        	<div class="col-xs-3 timer">
+	        		<h3>
+	        			Timer
+	        		</h3>
+	        		<h2 id="timer">
+	        			60
+	        		</h2>
+	        		<button id="startTimer" class="btn btn-success btn-sm">START</button>
+					<button id="stopTimer" class="btn btn-danger btn-sm" style="display:none;">STOP</button>
+	        		<button id="resetTimer" class="btn btn-warning btn-sm" style="display:none;">RESET</button>
+	        	</div>
+	        	<div class="col-xs-6 col-xs-offset-3 logo">
+	                 <img class="img-responsive" src="Logabet.svg"/>   		
+	        	</div>
+	            <div class="col-xs-3 score"/>
+	        		<h3>
+	        			Score
+	        		</h3>
+	        		<h2 id="score">
+	        			00
+	        		</h2>
+	        	</div>
+        	</div>
         </div> 
     </div>
     <div class="panel panel-primary">
@@ -28,7 +51,7 @@
             <h1 style="display:none;" id="validMessage" name="validMessage"></h1>
         </div>
         <div class="panel-body text-center">
-            <input id="inputLetter" name="inputLetter" class="h1 col-letter text-center" autofocus="true" autocapitalize=off />
+            <input id="inputLetter" name="inputLetter" class="h1 col-letter text-center" autofocus="true" autocapitalize=on />
         </div>
     </div>
 
@@ -70,6 +93,12 @@
 	                <label>
 	                    <input id="caseSens" name="caseSens" type="checkbox" class="checkbox">
 	                    CaSe SenSiTiVe
+	                </label>    
+	            </div>
+	            <div class="checkbox checkbox-inline">
+	                <label>
+	                    <input id="timedGame" name="timedGame" type="checkbox" class="checkbox" checked="checked">
+	                    Timer
 	                </label>    
 	            </div>
 	        </div>
