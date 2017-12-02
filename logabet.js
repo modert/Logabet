@@ -61,7 +61,7 @@ function showHideTimerButtons(status){
             $('#startTimer').show();
             $('#stopTimer').hide();
             $('#resetTimer').hide();
-            $('#inputLetter').prop('disabled',false).te;
+            $('#inputLetter').prop('disabled',false);
             $refocus();
             break;
     }
@@ -94,7 +94,7 @@ function resetTimer(){
     score = scoreDefault;
     updateClock();
     updateScore();
-    showHideTimerButtons()
+    showHideTimerButtons('stopped')
 }
 
 function updateClock(){
